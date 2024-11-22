@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        button {
+            width: 25px;
+            height: 25px;
+            border-radius: 100%;
+        }
+    </style>
+
+    <script>
+
+        var n1 = 0;
+        var n2 = 0;
+        var operador;
+
+
+        function btn_(parametro) {
+
+            if (document.getElementById("resultado").innerHTML == 0) {
+                document.getElementById("resultado").innerHTML = parametro;
+            }
+            else {
+                document.getElementById("resultado").innerHTML += parametro;
+            }
+
+        }
+
+        function Somar() {
+            operador = "+";
+            n1 = document.getElementById("resultado").innerHTML;
+            document.getElementById("resultado").innerHTML = 0;
+        }
+
+
+        function Subtração() {
+            operador = "-";
+            n1 = document.getElementById("resultado").innerHTML;
+            document.getElementById("resultado").innerHTML = 0;
+        }
+
+        function Multiplicação() {
+            operador = "*";
+            n1 = document.getElementById("resultado").innerHTML;
+            document.getElementById("resultado").innerHTML = 0;
+        }
+
+        function Divisão() {
+            operador = "/";
+            n1 = document.getElementById("resultado").innerHTML;
+            document.getElementById("resultado").innerHTML = 0;
+        }
+
+        function Limpar () {
+            operador = "/";
+            n1 = document.getElementById("resultado").innerHTML;
+            document.getElementById("resultado").innerHTML = 0;
+        }
+
+        function limpar () {
+          n1 = 0;
+          n2 = 0;
+            operador = "";
+            document.getElementById("resultado").innerHTML = "0";
+        }
+
+        function resultar() {
+           n2 = document.getElementById("resultado").innerHTML;
+           if (operador == "+") document.getElementById("resultado").innerHTML = Number (n1) + Number (n2);            
+           if (operador == "-") document.getElementById("resultado").innerHTML = Number (n1) - Number (n2);     
+           if (operador == "*") document.getElementById("resultado").innerHTML = Number (n1) * Number (n2);     
+           if (operador == "/") document.getElementById("resultado").innerHTML = Number (n1) / Number (n2);     
+
+        }
+
+    </script>
+
+
+</head>
+
+<body>
+
+    <center>
+    <p id="resultado">0</p>
+    
+
+    <div>
+        <button onclick="Limpar()">C</button>
+        <button onclick="Divisão()">/</button>
+        <button onclick="Multiplicação()">x</button>
+        <button onclick="resultar()">=</button>
+    </div>
+
+    <div>
+        <button onclick="btn_(7)">7</button>
+        <button onclick="btn_(8)">8</button>
+        <button onclick="btn_(9)">9</button>
+        <button onclick="Subtração()">-</button>
+    </div>
+
+    <div>
+        <button onclick="btn_(4)">4</button>
+        <button onclick="btn_(5)">5</button>
+        <button onclick="btn_(6)">6</button>
+        <button onclick="Somar()">+</button>
+    </div>
+
+    <div>
+        <button onclick="btn_(1)">1</button>
+        <button onclick="btn_(2)">2</button>
+        <button onclick="btn_(3)">3</button>
+        <button onclick="btn_(0)">0</button>
+    </div>
+
+    </center>
+
+</body>
+
+</html>
